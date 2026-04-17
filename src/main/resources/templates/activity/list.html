@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户动态</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .activity-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .activity-item:hover {
+            background-color: #f9f9f9;
+        }
+        .activity-meta {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .activity-content {
+            margin-top: 5px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>校园在线学习资源管理系统</h1>
+    </div>
+    <div class="nav">
+        <a href="/">首页</a>
+        <a href="/resource/list">学习资源</a>
+        <a href="/frontier/list">前沿技术</a>
+        <a href="/activity/list">用户动态</a>
+        <a href="/user/login" style="float: right;">登录</a>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h2>用户动态</h2>
+            <div th:each="activity : ${activities}" class="activity-item">
+                <div class="activity-meta">
+                    用户ID: <span th:text="${activity.userId}"></span> | 
+                    活动类型: <span th:text="${activity.activityType}"></span> | 
+                    资源ID: <span th:text="${activity.resourceId}"></span> | 
+                    活动时间: <span th:text="${activity.activityTime}"></span>
+                </div>
+                <div class="activity-content" th:text="${activity.content}"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2026 校园在线学习资源管理系统</p>
+    </div>
+</body>
+</html>

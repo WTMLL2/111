@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>校园在线学习资源管理系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>校园在线学习资源管理系统</h1>
+    </div>
+    <div class="nav">
+        <a href="/">首页</a>
+        <a href="/resource/list">学习资源</a>
+        <a href="/frontier/list">前沿技术</a>
+        <a href="/activity/list">用户动态</a>
+        <a href="/user/login" style="float: right;">登录</a>
+        <a href="/user/register" style="float: right;">注册</a>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h2>欢迎使用校园在线学习资源管理系统</h2>
+            <p>本系统为网络工程专业学生提供学习资源管理、前沿技术推荐和用户动态功能。</p>
+        </div>
+        <div class="card">
+            <h3>热门学习资源</h3>
+            <ul>
+                <li><a href="/resource/detail/1">网络安全基础</a></li>
+                <li><a href="/resource/detail/2">Java编程实战</a></li>
+                <li><a href="/resource/detail/3">前端开发技术</a></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>前沿技术推荐</h3>
+            <ul>
+                <li><a href="/frontier/detail/1">人工智能最新进展</a></li>
+                <li><a href="/frontier/detail/2">区块链技术应用</a></li>
+                <li><a href="/frontier/detail/3">云计算技术发展</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2026 校园在线学习资源管理系统</p>
+    </div>
+</body>
+</html>
